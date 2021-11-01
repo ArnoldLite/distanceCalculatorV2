@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="distance_calculator_web_app" />
+    <mvc:annotation-driven/>
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/distance_calculator?useSSL=false&amp;serverTimezone=UTC"/>
+        <property name="user" value="root1" />
+        <property name="password" value="root" />
+    </bean>
+
+
+<!--    org.hibernate.dialect.MySQL8Dialect-->
+<!--    org.hibernate.dialect.MySQLDialect-->
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="distance_calculator_web_app.entities" />
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="200000"/>
+        <property name="defaultEncoding" value="utf-8"/>
+    </bean>
+
+<!--    <bean id="springLiquibase" class="liquibase.integration.spring.SpringLiquibase">-->
+<!--        <property name="dataSource" ref="dataSource" />-->
+<!--        <property name="changeLog" value="src.main.resources"/>-->
+<!--    </bean>-->
+
+<!--    <bean  id="liquibase"  class="liquibase.integration.spring.SpringLiquibase">-->
+<!--        <property  name="dataSource"  ref="dataSource"  />-->
+<!--        <property  name="changeLog"  value="classpath:changelog-master.xml"  />-->
+
+<!--        &lt;!&ndash;-->
+<!--        contexts specifies the runtime contexts to use.-->
+<!--        &ndash;&gt;-->
+<!--        <property  name="contexts"  value="test, production"  />-->
+<!--    </bean>-->
+
+
+</beans>

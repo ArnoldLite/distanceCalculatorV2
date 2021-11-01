@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<list>
+  <citiesList>
+    <city name="Paris" latitude="48.8534" longitude="2.3488"/>
+    <city name="Brasilia" latitude="-15.7797" longitude="-47.9297"/>
+    <city name="Moscow" latitude="55.7522" longitude="37.6156"/>
+    <city name="Dublin" latitude="53.3331" longitude="-6.24889"/>
+    <city name="Samara" latitude="53.2001" longitude="50.15"/>
+    <city name="Canberra" latitude="-35.2835" longitude="149.128"/>
+  </citiesList>
+
+  <distanceList>
+    <distance fromCity="Paris" toCity="Brasilia" distance="1.0"/>
+    <distance fromCity="Paris" toCity="Moscow" distance="1.0"/>
+    <distance fromCity="Paris" toCity="Dublin" distance="1.0"/>
+    <distance fromCity="Paris" toCity="Samara" distance="1.0"/>
+    <distance fromCity="Paris" toCity="Canberra" distance="1.0"/>
+
+    <distance fromCity="Brasilia" toCity="Moscow" distance="2.0"/>
+    <distance fromCity="Brasilia" toCity="Dublin" distance="2.0"/>
+    <distance fromCity="Brasilia" toCity="Samara" distance="2.0"/>
+    <distance fromCity="Brasilia" toCity="Canberra" distance="2.0"/>
+    <distance fromCity="Brasilia" toCity="Paris" distance="2.0"/>
+
+    <distance fromCity="Moscow" toCity="Paris" distance="3.0"/>
+    <distance fromCity="Moscow" toCity="Brasilia" distance="3.0"/>
+    <distance fromCity="Moscow" toCity="Dublin" distance="3.0"/>
+    <distance fromCity="Moscow" toCity="Canberra" distance="3.0"/>
+    <distance fromCity="Moscow" toCity="Samara" distance="3.0"/>
+
+    <distance fromCity="Dublin" toCity="Moscow" distance="4.0"/>
+    <distance fromCity="Dublin" toCity="Brasilia" distance="4.0"/>
+    <distance fromCity="Dublin" toCity="Paris" distance="4.0"/>
+    <distance fromCity="Dublin" toCity="Samara" distance="4.0"/>
+    <distance fromCity="Dublin" toCity="Canberra" distance="4.0"/>
+
+    <distance fromCity="Samara" toCity="Moscow" distance="5.0"/>
+    <distance fromCity="Samara" toCity="Brasilia" distance="5.0"/>
+    <distance fromCity="Samara" toCity="Paris" distance="5.0"/>
+    <distance fromCity="Samara" toCity="Canberra" distance="5.0"/>
+    <distance fromCity="Samara" toCity="Dublin" distance="5.0"/>
+
+    <distance fromCity="Canberra" toCity="Dublin" distance="6.0"/>
+    <distance fromCity="Canberra" toCity="Paris" distance="6.0"/>
+    <distance fromCity="Canberra" toCity="Brasilia" distance="6.0"/>
+    <distance fromCity="Canberra" toCity="Moscow" distance="6.0"/>
+    <distance fromCity="Canberra" toCity="Samara" distance="6.0"/>
+
+  </distanceList>
+</list>

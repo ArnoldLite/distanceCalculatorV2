@@ -1,0 +1,9 @@
+package distance_calculator_web_app.services;
+
+import distance_calculator_web_app.wrappersAndAdapters.CityWrapperForCalculation;
+import distance_calculator_web_app.wrappersAndAdapters.DistanceWrapper;
+
+public interface DistanceCalculationService {
+
+    DistanceWrapper distanceCalculation(CityWrapperForCalculation cityWrapperForCalculation);
+}
