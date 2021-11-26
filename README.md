@@ -19,3 +19,5 @@ Spring + Tomcat.
 There is the example of xml file for the upload in the "resources" directory.
 
 Also in the directory "resources" there are test examples with app "postmen" and url for endpoints.
+
+DAO layer will be rewritten using genericDao
