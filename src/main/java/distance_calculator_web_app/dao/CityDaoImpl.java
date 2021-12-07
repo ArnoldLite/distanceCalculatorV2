@@ -21,7 +21,7 @@ public class CityDaoImpl implements CityDao {
     public List<CityEntity> getAllCity() {
         Session session = sessionFactory.getCurrentSession();
 
-        List<CityEntity> allCities = session.createQuery("from CityEntity")
+        List<CityEntity> allCities = session.createQuery("from CityEntity",CityEntity.class)
                 .getResultList();
 
         return allCities;

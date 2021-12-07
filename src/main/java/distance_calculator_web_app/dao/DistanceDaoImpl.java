@@ -33,13 +33,13 @@ public class DistanceDaoImpl implements DistanceDao {
         Session session = sessionFactory.getCurrentSession();
 
         List<DistanceEntity> list =
-                session.createQuery("from DistanceEntity where fromCity =: fromCity and toCity =: toCity")
+                session.createQuery("from DistanceEntity where fromCity =: fromCity and toCity =: toCity",DistanceEntity.class)
                         .setParameter("fromCity", fromCity)
                         .setParameter("toCity", toCity)
                         .getResultList();
 
         if (list.isEmpty()) {
-            list = session.createQuery("from DistanceEntity where fromCity =: fromCity and toCity =: toCity")
+            list = session.createQuery("from DistanceEntity where fromCity =: fromCity and toCity =: toCity",DistanceEntity.class)
                     .setParameter("fromCity", toCity)
                     .setParameter("toCity", fromCity)
                     .getResultList();
