@@ -1,5 +1,8 @@
 package distance_calculator_web_app.services;
 
+
+//простой класс для расчета расстояния по координатам
+
 public class CalculateDistance {
 
     private static final double RAD = 6_371.302;
@@ -18,6 +21,7 @@ public class CalculateDistance {
         double scale = Math.pow(10, 3);
         return Math.ceil((RAD * c) * scale) / scale ; // расстояние в км
     }
+
 
     private static double deg2rad(double deg) {
         return deg * (Math.PI / 180);
